@@ -1,29 +1,28 @@
 #include "monty.h"
 
 /**
- *check_fun - check of the funtion
- *@lineNumber: the number oo the line
- *@str1: string of the compairs elemntes
- *@heade: this is variable of the struct
- * Return: Always EXIT_SUCCES
- */
-void check_fun(unsigned int lineNumber, char *str1, stack_t **heade)
+ * call_fun - Compare the funtion with structure
+ * @count_line: Number of the line
+ * @tok_a: first word of line of th file
+ * @top: variable of the struct
+ * Return: EXIT_SUCCES
+**/
+void call_fun(unsigned int count_line, char *tok_a, stack_t **top)
 {
 	int i;
 
-	instruction_t fun[] = {
+	instruction_t options[] = {
 		{"push", push},
 		{"pall", pall},
 		{NULL, NULL},
 	};
 
-	for (i = 0; fun[i].opcode != NULL; i++)
+	for (i = 0; options[i].opcode != NULL; i++)
 	{
-		if (strcmp(fun[i].opcode, str1) == 0)
+		if (strcmp(options[i].opcode, tok_a) == 0)
 		{
-			fun[i].f(heade, lineNumber);
+			options[i].f(top, count_line);
 			break;
 		}
 	}
-	/*dprintf(STDERR_FILENO, "L %u: unknown instruction <opcode>\n", lineNumber);*/
 }

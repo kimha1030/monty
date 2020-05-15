@@ -40,12 +40,12 @@ typedef struct instruction_s
 extern int number;
 
 int main(int argc, char *argv[]);
-void check_fun(unsigned int lineNumber, char *str1, stack_t **heade);
+void call_fun(unsigned int count_line, char *tok_a, stack_t **top)
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void free_stack_t(stack_t *stack);
-void free_data_t(char **arguments);
-void free_line(char **entrada);
+void frees_stack(stack_t *stack);
+void free_data(char **arguments);
+void free_input(char **input);
 stack_t *add_dnodeint(stack_t **head, const int n);
 size_t print_dlistint(const stack_t *h);
 int _isdigit(int c);

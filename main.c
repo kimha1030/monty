@@ -1,52 +1,52 @@
 #include "monty.h"
 
 /**
- * main - main
- *@argc: the number of the chars
- *@argv: the char
+ * main - Monty interpreter
+ * @argc: the number of the chars
+ * @argv: the char
  * Return: Always EXIT_SUCCES
  */
-int number;
 
 int main(int argc, char *argv[])
 {
-	stack_t **heade = NULL;
-	FILE *stream;
-	char *line = NULL, *str1 = NULL, *str2 = NULL;
-	size_t len = 0;
-	ssize_t nread;
-	int x, j;
-	int lineNumber = 1;
+	stack_t **top = NULL;
+	FILE *file;
+	char *buffer = NULL, *tok_a = NULL, *tok_b = NULL;
+	size_t lenght = 0;
+	ssize_t get_lines;
+	int i, number
+	int count_line = 1;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "Usage: %s <file>\n", argv[0]);
 		exit(EXIT_FAILURE);
 	}
-	stream = fopen(argv[1], "r");
-	if (stream == NULL)
+	file = fopen(argv[1], "r");
+	if (file == NULL)
 	{
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
-	while (nread = getline(&line, &len, stream) != EOF)
+	while ((get_lines = getline(&buffer, &lenght, file)) != EOF)
 	{
-		j = strlen(line);
-		line[j - 1] = '\0';
-		str1 = strtok(line, " \n\t");
-		if (strcmp(str1, "push") == 0)
+		i = strlen(buffer);
+		buffer[i - 1] = '\0';
+		tok_a = strtok(buffer, " \n\t");
+		if (strcmp(tok_a, "push") == 0)
 		{
-			str2 = strtok(NULL, " \n\t");
-			if(_isdigit(str2) == 0)
-				number = atoi(str2);
-			lineNumber++;
+			tok_b = strtok(NULL, " \n\t");
+			if(_isdigit(tok_b) == 0)
+				number = atoi(tok_b);
+			count_line++;
 		}
-		if (str1 != 0)
-			{
-				check_fun(lineNumber, str1, &heade);
-			}
+		if (tok_a != 0)
+		{
+			call_fun(count_line, tok_a, &top);
+		}
 	}
-	free_line(&line);
-	free_stack_t(heade);
-	fclose(stream);
+	free_line(&buffer);
+	free_stack_t(top);
+	fclose(file);
 	return (EXIT_SUCCESS);
 }
