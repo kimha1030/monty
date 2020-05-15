@@ -1,12 +1,13 @@
 #include "monty.h"
-/**
- *add_dnodeint - add the nodes of the stack_t
- *@head: the chars of the lists
- *@n: the number coitainrs in the lists
- *Return: of the head
- */
 
-stack_t *add_dnodeint(stack_t **head, const int n)
+/**
+ * add_node - add the nodes of the stack_t
+ * @head: head of the lists
+ * @n: number (data) to add
+ * Return: pointer
+ **/
+
+stack_t *add_node(stack_t **head, const int n)
 {
 	stack_t *new;
 

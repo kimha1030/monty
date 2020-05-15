@@ -4,10 +4,11 @@
  * call_fun - Compare the funtion with structure
  * @count_line: Number of the line
  * @tok_a: first word of line of th file
- * @top: variable of the struct
+ * @heade: variable of the struct
  * Return: EXIT_SUCCES
-**/
-void call_fun(unsigned int count_line, char *tok_a, stack_t **top)
+ **/
+
+void call_fun(unsigned int count_line, char *tok_a, stack_t **heade)
 {
 	int i;
 
@@ -21,7 +22,7 @@ void call_fun(unsigned int count_line, char *tok_a, stack_t **top)
 	{
 		if (strcmp(options[i].opcode, tok_a) == 0)
 		{
-			options[i].f(top, count_line);
+			options[i].f(heade, count_line);
 			break;
 		}
 	}

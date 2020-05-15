@@ -2,20 +2,20 @@
 
 /**
  * main - Monty interpreter
- * @argc: the number of the chars
- * @argv: the char
- * Return: Always EXIT_SUCCES
- */
+ * @argc: argument count
+ * @argv: argument vector
+ * Return: EXIT_SUCCESS or EXIT_FAILURE
+ **/
 
 int main(int argc, char *argv[])
 {
-	stack_t **top = NULL;
+	stack_t **heade = NULL;
 	FILE *file;
 	char *buffer = NULL, *tok_a = NULL, *tok_b = NULL;
 	size_t lenght = 0;
 	ssize_t get_lines;
-	int i, number
-	int count_line = 1;
+	int i, number;
+	unsigned int count_line = 1;
 
 	if (argc != 2)
 	{
@@ -36,17 +36,17 @@ int main(int argc, char *argv[])
 		if (strcmp(tok_a, "push") == 0)
 		{
 			tok_b = strtok(NULL, " \n\t");
-			if(_isdigit(tok_b) == 0)
+			if(fun_isdigit(tok_b) == 0)
 				number = atoi(tok_b);
 			count_line++;
 		}
 		if (tok_a != 0)
 		{
-			call_fun(count_line, tok_a, &top);
+			call_fun(count_line, tok_a, &heade);
 		}
 	}
 	free_line(&buffer);
-	free_stack_t(top);
+	free_stack_t(heade);
 	fclose(file);
 	return (EXIT_SUCCESS);
 }

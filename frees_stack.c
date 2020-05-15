@@ -4,7 +4,7 @@
  * frees_stack - free the memory
  * @stack: list for the structure
  * Return: void
- */
+ **/
 
 void frees_stack(stack_t *stack)
 {

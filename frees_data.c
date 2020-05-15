@@ -4,7 +4,7 @@
  * frees_data - free the memory
  * @arguments: the list for the structure
  * Return: void
-**/
+ **/
 
 void frees_data(char **arguments)
 {

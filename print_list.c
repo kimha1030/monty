@@ -4,7 +4,7 @@
  * print_list - Function that prints all the elemets of the list
  * @h: pointer to head of the list
  * Return: node
-**/
+ **/
 
 size_t print_list(const stack_t *h)
 {

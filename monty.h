@@ -1,11 +1,10 @@
-#ifndef __HOLBERTON_H__
-#define __HOLBERTON_H__
+#ifndef __MONTY_H__
+#define __MONTY_H__
 
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
-#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -39,15 +38,14 @@ typedef struct instruction_s
 
 extern int number;
 
-int main(int argc, char *argv[]);
-void call_fun(unsigned int count_line, char *tok_a, stack_t **top)
+void call_fun(unsigned int count_line, char *str1, stack_t **heade);
+void frees_stack(stack_t *stack);
+void frees_data(char **arguments);
+void frees_buffer(char **input);
+stack_t *add_node(stack_t **head, const int n);
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
-void frees_stack(stack_t *stack);
-void free_data(char **arguments);
-void free_input(char **input);
-stack_t *add_dnodeint(stack_t **head, const int n);
-size_t print_dlistint(const stack_t *h);
-int _isdigit(int c);
+size_t print_list(const stack_t *h);
+int fun_isdigit(int c);
 
 #endif
