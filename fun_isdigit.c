@@ -6,14 +6,20 @@
  * Return: Always 0 (Success)
  **/
 
-int fun_isdigit(int c)
+int fun_isdigit(char *c)
 {
-	if (c >= 48 && c <= 57)
+	int x;
+
+	for (x = 0; c[x] != '\0'; x++)
 	{
-		return (1);
+		if (c[x] >= 48 && c[x] <= 57)
+		{
+			return (0);
+		}
+		else
+		{
+			return (1);
+		}
 	}
-	else
-	{
-		return (0);
-	}
+	return (0);
 }

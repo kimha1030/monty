@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -38,14 +39,23 @@ typedef struct instruction_s
 
 extern int number;
 
-void call_fun(unsigned int count_line, char *str1, stack_t **heade);
-void frees_stack(stack_t *stack);
-void frees_data(char **arguments);
-void frees_buffer(char **input);
-stack_t *add_node(stack_t **head, const int n);
+FILE *open_file(int argc, char *argv[]);
+void call_fun(unsigned int count_line, char *toka, stack_t **h);
+void free_stack(stack_t *stack);
+void free_buffer(char **input);
 void push(stack_t **stack, unsigned int line_number);
+stack_t *add_dnodeint(stack_t **h, const int n);
 void pall(stack_t **stack, unsigned int line_number);
-size_t print_list(const stack_t *h);
-int fun_isdigit(int c);
+void print_dlistint(stack_t **h);
+size_t dlistint_len(stack_t *h);
+int fun_isdigit(char *c);
+void pint(stack_t **stack, unsigned int line_number);
+void pint_top(stack_t **h, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
+stack_t *swap_top(stack_t **h, unsigned int line_number);
+void add(stack_t **stack, unsigned int line_number);
+stack_t *add_top(stack_t **h, unsigned int line_number);
+void pop(stack_t **stack, unsigned int line_number);
+int pop_nodes(stack_t **h, unsigned int position, unsigned int line_number);
 
 #endif
