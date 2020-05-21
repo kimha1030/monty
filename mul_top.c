@@ -16,17 +16,12 @@ stack_t *mul_top(stack_t **h, unsigned int position, unsigned int line_number)
 	lenght = dlistint_len(*h);
 	if (lenght < minimun)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't mul, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
-	if (*h == NULL)
+	mult = (*h);
+	if (*h != NULL)
 	{
-		fprintf(stderr, "L%u: division by zero\n", line_number);
-		exit(EXIT_FAILURE);
-	}
-	else
-	{
-		mult = (*h);
 		mult = (*h)->next;
 		mult->n = mult->n * (*h)->n;
 		pop_nodes(h, position, line_number);
