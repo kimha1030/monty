@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
 	size_t lenght = 0;
 	unsigned int count_line = 1;
 	FILE *f;
-	int cf;
+	int cf, x = 0;
 
 	f = open_file(argc, argv);
 	while (getline(&buffer, &lenght, f) != EOF)
@@ -22,13 +22,15 @@ int main(int argc, char *argv[])
 		if (strcmp(toka, let) == 0)
 		{
 			tokb = strtok(NULL, " \n\t");
-			if (fun_isdigit((tokb)) == 0)
-				number = atoi(tokb);
-			else
+			for (x = 0; tokb[x] != '\0'; x++)
 			{
-				fprintf(stderr, "L%u: usage: push integer\n", count_line);
-				exit(EXIT_FAILURE);
+				if (isdigit(tokb[x]) == 0)
+				{
+					fprintf(stderr, "L%u: usage: push integer\n", count_line);
+					exit(EXIT_FAILURE);
+				}
 			}
+			number = atoi(tokb);
 		}
 		cf = call_fun(count_line, toka, &h);
 		if (cf == 1)

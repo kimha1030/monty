@@ -18,6 +18,8 @@ int pop_nodes(stack_t **h, unsigned int position, unsigned int line_number)
 	}
 	if ((*h)->next == 0 && position == 0)
 	{
+		free(*h);
+		*h = 0;
 		return (-1);
 	}
 	if (position > (dlistint_len(*h) - 1))
