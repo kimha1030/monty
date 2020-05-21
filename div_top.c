@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * div_top - Function that divides the element of top of the stack between second
+ * div_top - Function that divides two elements
  * @h: Variable of the struct
  * @position: always 0
  * @line_number: Number of line
@@ -16,7 +16,7 @@ stack_t *div_top(stack_t **h, unsigned int position, unsigned int line_number)
 	lenght = dlistint_len(*h);
 	if (lenght < minimun)
 	{
-		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	if (*h == 0 || *h == NULL)
