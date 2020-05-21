@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * call_fun - Compare the funtion with structure
  * @count_line: Number of the line
@@ -7,8 +6,7 @@
  * @h: head of the struct
  * Return: void
  **/
-
-void call_fun(unsigned int count_line, char *toka, stack_t **h)
+int call_fun(unsigned int count_line, char *toka, stack_t **h)
 {
 	instruction_t options[] = {
 		{"push", push},
@@ -31,6 +29,12 @@ void call_fun(unsigned int count_line, char *toka, stack_t **h)
 		if (strcmp(options[i].opcode, toka) == 0)
 		{
 			options[i].f(h, count_line);
+			return (0);
+		}
+		else
+		{
+			return (1);
 		}
 	}
+	return (0);
 }

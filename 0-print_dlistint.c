@@ -9,11 +9,11 @@
 void print_dlistint(stack_t **h)
 {
 	int i = 0;
-	stack_t *tmp = *h;
+	stack_t *aux = *h;
 
-	for (i = 0; tmp != NULL; i++)
+	for (i = 0; aux != NULL; i++)
 	{
-		printf("%i\n", tmp->n);
-		tmp = tmp->next;
+		printf("%i\n", aux->n);
+		aux = aux->next;
 	}
 }

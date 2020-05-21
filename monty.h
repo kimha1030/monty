@@ -40,7 +40,7 @@ typedef struct instruction_s
 extern int number;
 
 FILE *open_file(int argc, char *argv[]);
-void call_fun(unsigned int count_line, char *toka, stack_t **h);
+int call_fun(unsigned int count_line, char *toka, stack_t **h);
 void free_stack(stack_t *stack);
 void free_buffer(char **input);
 void push(stack_t **stack, unsigned int line_number);
