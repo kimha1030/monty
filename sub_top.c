@@ -19,6 +19,7 @@ stack_t *sub_top(stack_t **h, unsigned int position, unsigned int line_number)
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+	subs = *h;
 	if (*h != NULL)
 	{
 		subs = (*h)->next;
