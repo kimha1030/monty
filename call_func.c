@@ -31,10 +31,6 @@ int call_fun(unsigned int count_line, char *toka, stack_t **h)
 			options[i].f(h, count_line);
 			return (0);
 		}
-		else
-		{
-			return (1);
-		}
 	}
-	return (0);
+	return (1);
 }
