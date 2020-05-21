@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
 				exit(EXIT_FAILURE);
 			}
 		}
-		printf("%u", count_line);
 		cf = call_fun(count_line, toka, &h);
 		if (cf == 1)
 		{
