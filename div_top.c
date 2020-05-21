@@ -19,6 +19,7 @@ stack_t *div_top(stack_t **h, unsigned int position, unsigned int line_number)
 		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
 	}
+	divs = (*h);
 	if (*h == 0 || *h == NULL)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
@@ -26,7 +27,6 @@ stack_t *div_top(stack_t **h, unsigned int position, unsigned int line_number)
 	}
 	else
 	{
-		divs = (*h);
 		divs = (*h)->next;
 		divs->n = divs->n / (*h)->n;
 		pop_nodes(h, position, line_number);
