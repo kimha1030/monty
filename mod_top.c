@@ -20,7 +20,7 @@ stack_t *mod_top(stack_t **h, unsigned int position, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	mods = (*h);
-	if (*h == 0 || *h == NULL)
+	if ((*h)->n == 0 || *h == NULL)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		exit(EXIT_FAILURE);
