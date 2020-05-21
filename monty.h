@@ -54,8 +54,18 @@ void pint_top(stack_t **h, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 stack_t *swap_top(stack_t **h, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
-stack_t *add_top(stack_t **h, unsigned int line_number);
+stack_t *add_top(stack_t **h, unsigned int position, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 int pop_nodes(stack_t **h, unsigned int position, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
+stack_t *sub_top(stack_t **h, unsigned int position, unsigned int line_number);
+void f_div(stack_t **stack, unsigned int line_number);
+stack_t *div_top(stack_t **h, unsigned int position, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+stack_t *mul_top(stack_t **h, unsigned int position, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+stack_t *mod_top(stack_t **h, unsigned int position, unsigned int line_number);
+
 
 #endif

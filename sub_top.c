@@ -1,17 +1,17 @@
 #include "monty.h"
 
 /**
- * add_top - Function that get the sum of top of the stack
+ * sub_top - Function that delete the element of top of the stack of the second
  * @h: Variable of the struct
  * @position: always 0
  * @line_number: Number of line
  * Return: void
  **/
 
-stack_t *add_top(stack_t **h, unsigned int position, unsigned int line_number)
+stack_t *sub_top(stack_t **h, unsigned int position, unsigned int line_number)
 {
 	int minimun = 2, lenght;
-	stack_t *sum = NULL;
+	stack_t *subs = NULL;
 
 	lenght = dlistint_len(*h);
 	if (lenght < minimun)
@@ -22,10 +22,10 @@ stack_t *add_top(stack_t **h, unsigned int position, unsigned int line_number)
 
 	if (*h != NULL)
 	{
-		sum = (*h);
-		sum = (*h)->next;
-		sum->n = sum->n + (*h)->n;
+		subs = (*h);
+		subs = (*h)->next;
+		subs->n = subs->n - (*h)->n;
 		pop_nodes(h, position, line_number);
 	}
-	return (sum);
+	return (subs);
 }

@@ -9,5 +9,7 @@
 
 void add(stack_t **stack, unsigned int line_number)
 {
-	add_top(stack, line_number);
+	int position = 0;
+
+	add_top(stack, position, line_number);
 }

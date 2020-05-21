@@ -17,6 +17,11 @@ void call_fun(unsigned int count_line, char *toka, stack_t **h)
 		{"swap", swap},
 		{"add", add},
 		{"pop", pop},
+		{"sub", sub},
+		{"div", f_div},
+		{"mul", mul},
+		{"nop", nop},
+		{"mod", mod},
 		{NULL, NULL},
 	};
 	unsigned int i;
